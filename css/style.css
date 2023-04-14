@@ -10,9 +10,57 @@
 /******************************************
 /* LAYOUT
 /*******************************************/
-
-
+header{
+  display: flex;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0 0.7em;
+  background-color: red;
+}
+div{
+  margin: auto 0;
+}
+.search-bar-container{
+  display: flex;
+  max-width: 50%;
+  height: 31.59px;
+  border-radius: 30px;
+  flex-grow: 2;
+  background-color: white;
+}
+main{
+  min-height: 50%;
+  max-width: 50%;
+  margin: 75px auto 0 auto;
+}
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+.claro-logo{
+  width: 56.88px;
+  height: 30px;
+}
+.info-logo{
+  margin-left: 1em;
+}
+.search-logo{
+  margin-right: 1em;
+}
+input[type=radio] {
+  display: none;
+}
+input[type=radio]:checked + label {
+background-color: white;
+}
+input[type=text]{
+  width: 100%;
+  border: none;
+}
+h1{
+  font-family: 'Roboto', monospace;
+  color: red;
+  border-bottom: 4px red solid;
+  font-size: 2.3rem;
+  font-weight: 700;
+}
