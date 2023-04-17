@@ -47,12 +47,7 @@ main{
 .search-logo{
   margin-right: 1em;
 }
-input[type=radio] {
-  display: none;
-}
-input[type=radio]:checked + label {
-background-color: white;
-}
+
 input[type=text]{
   width: 100%;
   border: none;
@@ -86,4 +81,19 @@ h1{
 .darkModeOn{
   color: white;
   background-color: rgb(46, 46, 46);
+}
+
+.search-list li {
+  border: 1px solid #ddd; /* Add a border to all links */
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6; /* Grey background color */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove default text underline */
+  font-size: 18px; /* Increase the font-size */
+  color: black; /* Add a black text color */
+  display: block; /* Make it into a block element to fill the whole list */
+}
+
+.search-list li:hover:not(.header) {
+  background-color: #eee; /* Add a hover effect to all links, except for headers */
 }
