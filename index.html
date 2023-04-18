@@ -17,26 +17,28 @@
 		<header>
 			<div>
 				<img src="https://172.27.72.88/tools/datos-alarm-helper/assets/claro.9f72281e.svg" alt="claro logo" class="claro-logo">
-			</div>			
-			<div id="searchBar" class="search-bar-container">
-				<div class="info-logo">
-					<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path></svg>
-					<div id="infoDetailed" class="info-dropdown">
-						<p>Si presionas el boton de buscar sin introducir ningun nodo, se presentaran todos los nodos alarmados con sus respectivas alarmas. En cambio, si introduces un nodo en especifico, se mostrara el nodo con sus alarmas presentes de tener alguna presente. En caso contrario se mostrara el nodo indicando que no tiene alarmas presentes.</p>
+			</div>	
+			<div class="search-bar-container vertical-flex">
+				<div id="searchBar" class="search-bar-container">
+					<div class="info-logo">
+						<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path></svg>
+						<div id="infoDetailed" class="info-dropdown">
+							<p>Si presionas el boton de buscar sin introducir ningun nodo, se presentaran todos los nodos alarmados con sus respectivas alarmas. En cambio, si introduces un nodo en especifico, se mostrara el nodo con sus alarmas presentes de tener alguna presente. En caso contrario se mostrara el nodo indicando que no tiene alarmas presentes.</p>
+						</div>
+					</div>
+					
+					<input id="searchTextInput" type="text" class="input-search" onkeyup="filterSearchList()">					
+					<div class="search-logo">
+						<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+							<path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+						</svg>
 					</div>
 				</div>
-				
-				<input id="searchTextInput" type="text" class="input-search" onkeyup="filterSearchList()">
-				<div class="search-list-container">
+				<div id="searchListContainer" class="search-list-container hide">
 					<ul id="searchList" class="search-list"></ul>
 				</div>
-				
-				<div class="search-logo">
-					<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-						<path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
-					</svg>
-				</div>
-			</div>
+			</div>		
+			
 			<div>
 				<svg id="darkModeButton" style="color: white" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z" fill="white"></path> </svg>
 			</div>

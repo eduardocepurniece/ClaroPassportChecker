@@ -1,22 +1,35 @@
 document.querySelector('#darkModeButton').addEventListener('click', turnDark);
+document.querySelector('#searchTextInput').addEventListener('focus', deployList);
+document.querySelector('#searchTextInput').addEventListener('focusout', hideList);
 
-function turnDark(){
-    document.querySelector('#darkModeButton').classList.toggle('shadow');
-    document.querySelector('#searchBar').classList.toggle('darkModeOn');
-    document.querySelector('#body').classList.toggle('darkModeOn');
-    document.querySelector('#searchTextInput').classList.toggle('darkModeOn');
-    document.querySelector('#infoDetailed').classList.toggle('darkModeOn');
-}
 
 function getPassportNodes(){
-    fetch('http://172.27.72.88:40002/nodes')
-    .then(res => res.json()) // parse response as JSON
-    .then(data => {
-      console.log(data)
-    })
-    .catch(err => {
-        console.log(`error ${err}`)
-    });
+  fetch('http://172.27.72.88:40002/nodes')
+  .then(res => res.json()) // parse response as JSON
+  .then(data => {
+    console.log(data)
+  })
+  .catch(err => {
+      console.log(`error ${err}`)
+  });
+}
+
+function turnDark(){
+  document.querySelector('#darkModeButton').classList.toggle('shadow');
+  document.querySelector('#searchBar').classList.toggle('darkModeOn');
+  document.querySelector('#body').classList.toggle('darkModeOn');
+  document.querySelector('#searchTextInput').classList.toggle('darkModeOn');
+  document.querySelector('#infoDetailed').classList.toggle('darkModeOn');
+  document.querySelector('#searchList').classList.toggle('darkModeOn');
+}
+
+function deployList(){
+  document.querySelector('#searchListContainer').classList.remove('hide');
+  document.querySelector('#searchBar').classList.add('search-bar-bottom-border-hide');
+}
+function hideList(){
+  document.querySelector('#searchListContainer').classList.add('hide');
+  document.querySelector('#searchBar').classList.remove('search-bar-bottom-border-hide');
 }
 
 let dataPassportNodes = {"value":["D30PB1","D30PB2","D30PB3","DRTPB1","DRTPB2","DRTPB3","STGPB1","STGPB2","STGPB3","MELPB1","MELPB2","MELPB3","D30PT1","DRTPT1","STGPT1","D30PP2","STGPP2","ROMPB1","CAQPB1","HERPB1","HERPB2","HERPB3","D30PT2","DRTPT2","MELPT1","STGPT2"],"start":"2023-04-17T13:39:22.090459","end":"2023-04-17T13:39:22.090669","delta":0.00021};
