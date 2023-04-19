@@ -65,6 +65,9 @@ main{
   height: 31.58px;
   border: none;
 }
+textarea:focus, input:focus{
+  outline: none;
+}
 h1{
   font-family: 'Roboto', monospace;
   color: red;
@@ -103,13 +106,25 @@ h1{
 .search-list li:hover:not(.header) {
   background-color: rgb(189, 189, 189); /* Add a hover effect to all links, except for headers */
 }
+.current-alarms-list{
+  margin: 30px 0;
+}
+.current-alarms-list li{
+  font-family: 'Roboto', serif;
+  font-size: 1.2rem;
+  margin: 10px 0;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: rgba(172, 172, 172, 0.473) 0px 0px 5px 0px, rgba(165, 165, 165, 0.411) 0px 0px 1px 0px;
+}
+
+
+
 .search-bar-bottom-border-hide{
   border-radius: 15px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;  
 }
-
-
 .hide{
   display: none;
 }
