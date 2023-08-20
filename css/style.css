@@ -108,6 +108,7 @@ h1{
 }
 .current-alarms-list{
   margin: 30px 0;
+  tabindex
 }
 .current-alarms-list li{
   font-family: 'Roboto', serif;
