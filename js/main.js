@@ -1,6 +1,6 @@
 document.querySelector('#darkModeButton').addEventListener('click', turnDark);
 document.querySelector('#searchTextInput').addEventListener('focus', deployList);
-document.querySelector('#searchTextInput').addEventListener('focusout', hideList);
+document.querySelector('#searchTextInput').addEventListener('focusout', hideList, false);
 document.querySelector('#searchButton').addEventListener('click', searchAndDeploy);
 
 
@@ -10,6 +10,12 @@ function getPassportNodes(){
   .then(data => {
     passportNodes = data.value;
     createNodesLi(passportNodes);
+
+    /*const nodesOnLine = document.querySelectorAll('.current-alarm');
+    console.log(nodesOnLine)
+    
+    nodesOnLine.forEach(element => element.addEventListener('click', console.log(element))) /*searchAndDeployFromList))*/
+    
   })
   .catch(err => {
       console.log(`error ${err}`)
@@ -29,9 +35,16 @@ function deployList(){
   document.querySelector('#searchListContainer').classList.remove('hide');
   document.querySelector('#searchBar').classList.add('search-bar-bottom-border-hide');
 }
-function hideList(){
-  document.querySelector('#searchListContainer').classList.add('hide');
-  document.querySelector('#searchBar').classList.remove('search-bar-bottom-border-hide');
+function hideList(e){
+  if (e.relatedTarget != null) {
+    const passportNodeName = e.relatedTarget.childNodes[0].childNodes[0].nodeValue;
+    document.querySelector('#searchTextInput').value = passportNodeName;
+    document.querySelector('#searchListContainer').classList.add('hide');
+    document.querySelector('#searchBar').classList.remove('search-bar-bottom-border-hide');
+  } else {
+    document.querySelector('#searchListContainer').classList.add('hide');
+    document.querySelector('#searchBar').classList.remove('search-bar-bottom-border-hide');
+  }
 }
 
 let dataPassportNodes = getPassportNodes()/*init passport nodes list*/
@@ -44,6 +57,9 @@ function createNodesLi(nodes){
         const liText = document.createTextNode(element);
         refLi.appendChild(liText);
         newLi.appendChild(refLi);
+        newLi.classList.add('current-alarm');
+        newLi.tabIndex = 0;
+        newLi.addEventListener('click', () => {console.log(liText)}, true);
         document.querySelector('#searchList').appendChild(newLi);
     });
 }
@@ -104,4 +120,10 @@ function searchAndDeploy(){
       console.log(`error ${err}`)
     });  
   }
+}
+
+function searchAndDeployFromList(click){
+  console.log('lol', click.target.value);
+  document.querySelector('#searchTextInput').value = click.target.value;
+
 }
